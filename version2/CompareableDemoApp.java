@@ -5,7 +5,7 @@ public class CompareableDemoApp {
 				public static void main(String[] args) {
 								Set<Person> set = new TreeSet<>();
 								for (String a: args) {
-									Person p = new ImportantPerson(a);
+									Person p = new Person(a);
 									System.out.println(p);
 									set.add(p);
 								}
@@ -33,8 +33,4 @@ class Person implements Comparable {
 								return otherPerson.age - this.age;
 				}
 }
-class ImportantPerson extends Person {
-	public ImportantPerson(String s) { super(s); }
-	public String toString() { return "VIP: " + super.toString(); } 
-	// won't compile: public String toString() { return "VIP: " + super.toString() + " is " + age + " years old."; }
-}
+
